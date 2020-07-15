@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="stock"
+            type="String" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_4sdp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_margin="@dimen/_4sdp"
+            android:id="@+id/btn_tambah_barang"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="end"
+            android:text="+"
+            android:textColor="@color/colorPrimaryWhite"
+            android:background="@drawable/corner_button_login"
+            android:textSize="@dimen/_20sdp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_data_kosong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:text="@string/data_kosong"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_stock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_barang" />
+    </LinearLayout>
+
+</layout>

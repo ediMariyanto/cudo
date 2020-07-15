@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="stockEditor"
+            type="String" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_4sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_6sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/colorPrimary"
+            android:paddingTop="@dimen/_10sdp"
+            android:text="@string/editor_barang"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryWhite"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:id="@+id/tv_id_editor_stock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/id"
+            android:importantForAutofill="no"
+            android:paddingEnd="@dimen/_20sdp"
+            android:textAlignment="textEnd"
+            tools:ignore="RtlSymmetry" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_6sdp"
+            android:paddingRight="@dimen/_6sdp"
+            android:weightSum="2"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="@string/nama_barang"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/et_nama_editor_stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:hint="@string/nama_barang"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_6sdp"
+            android:paddingRight="@dimen/_6sdp"
+            android:weightSum="2"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="@string/quantity"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/et_qty_editor_stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:hint="@string/quantity"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_6sdp"
+            android:paddingRight="@dimen/_6sdp"
+            android:weightSum="2"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:paddingStart="@dimen/_4sdp"
+                android:text="@string/harga"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <EditText
+                android:id="@+id/et_harga_editor_stock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:hint="@string/harga"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit_editor_stock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:background="@drawable/corner_button_login"
+            android:text="@string/submit"
+            android:textColor="@color/colorPrimaryWhite" />
+    </LinearLayout>
+
+</layout>

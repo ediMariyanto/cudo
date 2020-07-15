@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.cudocom.barang"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    bundle {
+        density {
+            enableSplit true
+        }
+        abi {
+            enableSplit true
+        }
+        language {
+            enableSplit false
+        }
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled !project.hasProperty('android.injected.invoked.from.ide')
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    dataBinding
+            {
+                enabled = true
+            }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+    lintOptions {
+        lintConfig rootProject.file('lint.xml')
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    buildToolsVersion = '28.0.3'
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    // ui
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    //noinspection GradleCompatible
+    implementation "com.android.support:design:28.0.0"
+
+
+    // lib main framework
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    implementation "android.arch.lifecycle:runtime:1.1.0"
+    implementation "android.arch.lifecycle:extensions:1.1.0"
+    implementation "android.arch.lifecycle:common-java8:1.1.0"
+    implementation "com.google.dagger:dagger:2.27"
+    implementation "com.google.dagger:dagger-android:2.16"
+    implementation "com.google.dagger:dagger-android-support:2.16"
+    implementation "com.jakewharton.timber:timber:4.7.1"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "com.squareup.retrofit2:retrofit:2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.5.0"
+
+
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.16"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.16"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "com.squareup.okhttp3:mockwebserver:3.9.0"
+    testImplementation "org.mockito:mockito-core:2.7.19"
+}
+
